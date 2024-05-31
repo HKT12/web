@@ -27,17 +27,26 @@
 
 
     const rectangle = svg.append("rect")
-      .attr("x", 200)
-      .attr("y", 50)
-      .attr("width", 100)
+      .attr("x", 500)
+      .attr("y", 300)
+      .attr("width", 300)
       .attr("height", 100)
       .attr("fill", "red");
 
    const triangle = svg.append("path")
-      .attr("d", "M 650 150 L 700 200 L 300 200 Z")
+      .attr("d", "M 650 150 L 700 200 L 500 200 Z")
       .attr("fill", "pink");
 
-  
+      var data = [80, 86, 168, 81, 203, 365];
+        svg.selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("x", function(d, i) { return i * 70 + 10; })
+            .attr("y", function(d) { return 400 - d; })
+            .attr("width", 50)
+            .attr("height", function(d) { return d; })
+            .style("fill", "blue");
   </script>
 </body>
 </html>
