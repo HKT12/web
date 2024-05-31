@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>DOM events</title>
+ 
+
+</head>
+<body>
+<label>Enter Name:</label>
+<input type ="text" id ="name" onchange="upper()" >
+<hr>
+<h3>Choose Background:</h3>
+<input type = "radio" name = "BG" onclick ="background('red')">RED
+<input type = "radio" name = "BG" onclick ="background('blue')">BLUE
+<input type = "radio" name = "BG" onclick ="background('yellow')">YELLOW
+<br>
+<h3>Choose Foreground:</h3>
+<input type = "radio" name = "FG" onclick ="foreground('red')">RED
+<input type = "radio" name = "FG" onclick ="foreground('blue')">BLUE
+<input type = "radio" name = "FG" onclick ="foreground('yellow')">YELLOW
+
+<br>
+<hr>
+<img src = "newrvlogo.png "  id = "img" onmouseover ="mouseover()" onmouseout = "mouseout()">
+
+<!--<input type = "text" id ="type" keypress="pressing()">
+<p id = "display"></p>
+-->
+<script>
+function upper(){
+        const x = document.getElementById("name");
+        x.value = x.value.toUpperCase();
+}
+
+function background(color){
+        document.body.style.backgroundColor=color
+}
+
+function foreground(color){
+        document.body.style.color=color
+}
+
+function mouseout(){
+        document.getElementById("img").src = "newrvlogo.png "
+}
+
+function mouseover(){
+        document.getElementById("img").src = "2.jpeg"
+}
+
+
+</script>
+</body>
+</html>

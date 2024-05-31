@@ -1,0 +1,236 @@
+<!-- <html>
+<head>
+<style>
+th,td{
+        padding:5px;
+}
+th{
+background-color:yellow;
+}
+table{
+width:50%;
+text-align:center;
+}
+
+</style></head>
+<body>
+<center>
+<h2>Faculty Details</h2>
+<table border=3>
+<tr>
+        <th>NAME</th>
+        <th>DESIGNATION</th>
+        <th>PHONE</th>
+        <th>SALARY</th>
+</tr>
+<tbody id="facultyTable">
+</tbody>
+</table>
+<br>
+<h2>Student Details</h2>
+<table border=3>
+<tr>
+        <th>SAPID</th>
+        <th>NAME</th>
+        <th>PHONE</th>
+        <th>PERCENTAGE</th>
+
+</tr>
+<tbody id="studentTable">
+</tbody>
+</table>
+</center>
+<script>
+var jsonData = {
+"college": "RV College of Engineering",
+"affiliated_to": "VTU",
+"department": "MCA",
+
+"faculty":[
+        {
+                "name":"Ravi",
+                "designation":"Developer",
+                "phone":"8798327587",
+                "salary":"60000"
+        },
+        {
+                "name":"Jagan",
+                "designation":"Manager",
+                "phone":"8759837587",
+                "salary":"80000"
+        },
+        {
+                "name":"Lokesh",
+                "designation":"Associate",
+                "phone":"8754327587",
+                "salary":"50000"
+        },
+        {
+                "name":"Hari",
+                "designation":"HR",
+                "phone":"4583327587",
+                "salary":"90000"
+        },
+        {
+                "name":"Manoj",
+                "designation":"Intern",
+                "phone":"8758327587",
+                "salary":"30000"
+        },
+        ],
+"students":[
+        {
+                "sapid":"1RV",
+                "name":"rishika",
+                "phone":"9523287632",
+                "percentage":"80%"
+        },
+        {
+                "sapid":"2RV",
+                "name":"varsha",
+                "phone":"3945347632",
+                "percentage":"78%"
+        },
+        {
+                "sapid":"3RV",
+                "name":"samita",
+                "phone":"9528327342",
+                "percentage":"82%"
+        },
+        {
+                "sapid":"4RV",
+                "name":"Raji",
+                "phone":"9232857632",
+                "percentage":"70%"
+        },
+        {
+                "sapid":"5RV",
+                "name":"Naveen",
+                "phone":"9523783423",
+                "percentage":"80%"
+        }
+        ]
+};
+
+
+
+// Function to generate HTML table rows for faculty
+  function generateFacultyRows() {
+    var facultyTableBody = document.getElementById("facultyTable");
+    var facultyData = jsonData.faculty;
+    facultyData.forEach(function(faculty) {
+      var row = "<tr>";
+      row += "<td>" + faculty.name + "</td>";
+      row += "<td>" + faculty.designation + "</td>";
+      row += "<td>" + faculty.phone + "</td>";
+      row += "<td>" + faculty.salary + "</td>";
+      row += "</tr>";
+      facultyTableBody.innerHTML += row;
+    });
+  }
+
+  // Function to generate HTML table rows for students
+  function generateStudentRows() {
+    var studentTableBody = document.getElementById("studentTable");
+    var studentData = jsonData.students;
+    studentData.forEach(function(students) {
+      var row = "<tr>";
+      row += "<td>" + students.sapid + "</td>";
+      row += "<td>" + students.name + "</td>";
+      row += "<td>" + students.phone + "</td>";
+      row += "<td>" + students.percentage + "</td>";
+      row += "</tr>";
+      studentTableBody.innerHTML += row;
+    });
+}
+generateFacultyRows();
+generateStudentRows();
+</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Information</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Faculty Information</h2>
+
+<table id="facultyTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Department</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  // JSON data
+  const jsonData = `{
+  "faculty": [
+    {
+      "id": 1,
+      "name": "Andhe Dharni",
+      "position": "Professor",
+      "department": "Computer Science",
+      "email": "andhe@gmail.com",
+      "phone": "1234567890"
+    },
+    {
+      "id": 2,
+      "name": "Chandrani",
+      "position": "Associate Professor",
+      "department": "Physics",
+      "email": "chandrani@gmail.com",
+      "phone": "1987654321"
+    }
+  ]
+}
+`;
+
+  // Parse JSON data
+  const data = JSON.parse(jsonData);
+
+  // Populate table
+  const tableBody = document.querySelector('#facultyTable tbody');
+  data.faculty.forEach(faculty => {
+    const row = `
+      <tr>
+        <td>${faculty.id}</td>
+        <td>${faculty.name}</td>
+        <td>${faculty.position}</td>
+        <td>${faculty.department}</td>
+        <td>${faculty.email}</td>
+        <td>${faculty.phone}</td>
+      </tr>
+    `;
+    tableBody.innerHTML += row;
+  });
+</script>
+</html>
+

@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="shortcut icon" href="#">
+<style>
+        th{
+                background-color:yellow;
+}
+        td{
+        padding:5px;
+}
+
+</style>
+</head>
+<body>
+<button type="button" onclick="studentdata()">Details</button>
+<table id="demo" border="5px"></table>
+<script>
+function studentdata() {
+        var stu = new XMLHttpRequest();
+        stu.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                        myfunction(this);
+                }
+        };
+        stu.open("GET", "prg8.xml", true);
+        stu.send();
+}
+
+function myfunction(xml){
+        var i;
+        var xmlDOC = xml.responseXML;
+        var table = "<tr><th>NAME</th><th>ADDRESS</th><th>EMAIL</th><th>PHONE</th><tr>"
+        var x = xmlDOC.getElementsByTagName("student");
+                for (i=0;i < x.length; i++){
+                        table += "<tr><td>" +
+                        x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("address")[0].childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue + "</td><td>" +
+                        x[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue + "</td><tr>"
+                }
+
+        document.getElementById("demo").innerHTML= table;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.disCon=function(){
+            console.log("stack element: "+stack);
+        }
+        Array.prototype.disLen=function(){
+            console.log("stack length: "+stack.length);
+        }
+        Array.prototype.top=function(){
+            console.log("top element: "+stack[stack.length-1]);
+        }
+        Array.prototype.popit=function(){
+            if (stack.length === 0)
+                console.log("Underflow");
+            else  
+                console.log("After poping",stack.pop());
+        }
+
+        var stack=[];
+        stack.disCon();
+        stack.disLen();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        stack.disCon();
+        stack.disLen();
+        
+        stack.top();
+        stack.popit();
+        stack.disCon();
+        
+        stack.top();
+        stack.popit();
+        stack.disCon();
+       
+        stack.top();
+        stack.popit();
+        stack.disCon();
+       
+        stack.popit();
+        
+    </script>
+</body>
+</html>

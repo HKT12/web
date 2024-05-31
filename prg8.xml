@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+        <student>
+                <name>harsha</name>
+                <address>kengeri</address>
+                <email>harsha@gmail.com</email>
+                <phone>9921272764</phone>
+        </student>
+        <student>
+                <name>Arun</name>
+                <address>Mysore</address>
+                <email>arun@gamil.com</email>
+                <phone>9843884938</phone>
+        </student>
+        <student>
+                <name>Jagan</name>
+                <address>Hubli</address>
+                <email>jagan@gmail.com</email>
+                <phone>8452874845</phone>
+        </student>
+
+</students>

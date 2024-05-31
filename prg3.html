@@ -1,0 +1,52 @@
+<html>
+<head>
+        <title>Timer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+.jumbotron{
+        text-align:center;
+        /* background-color:yellow; */
+        }
+
+</style>
+</head>
+<body>
+<div class="jumbotron">
+<h2>EVENT COUNTDOWN</h2>
+<p id="countdown"></p>
+
+<div>
+
+<script>
+
+        document.addEventListener(`DOMContentLoaded`, function() {
+                const countDownDate = new Date(`May 21 2024 19:25:00`).getTime();
+
+        const countdown = setInterval(function() {
+                const now = new Date().getTime();
+
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000*60*60*24));
+        const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+        const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+        const seconds = Math.floor((distance % (1000*60))/1000);
+
+        document.getElementById("countdown").innerHTML = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+
+        if (distance < 0){
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = `EXPIRED`;
+        }
+
+
+        },1000);
+        });
+
+</script>
+
+</body>
+</html>

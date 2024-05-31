@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3.js Complete Shapes</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    svg {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <svg id="shapes-container"></svg>
+
+  <script>
+    const svg = d3.select("#shapes-container");
+
+
+    const circle = svg.append("circle")
+      .attr("cx", 100)
+      .attr("cy", 100)
+      .attr("r", 50)
+      .attr("fill", "black");
+
+
+    const rectangle = svg.append("rect")
+      .attr("x", 200)
+      .attr("y", 50)
+      .attr("width", 100)
+      .attr("height", 100)
+      .attr("fill", "red");
+
+   const triangle = svg.append("path")
+      .attr("d", "M 650 150 L 700 200 L 300 200 Z")
+      .attr("fill", "pink");
+
+  
+  </script>
+</body>
+</html>

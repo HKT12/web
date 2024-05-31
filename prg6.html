@@ -1,0 +1,38 @@
+<html>
+<head>
+        <title>Objects</title>
+</head>
+<body>
+
+<script >
+        let bank = {"Name":"HDFC","Branch":"Kengeri","Manager":"KETAN"}
+        bank.ISFC = "FSDG5T645"
+        console.log(bank)
+
+        let vehicle = new Object();
+                vehicle.name = "KIA"
+                vehicle.type = "SUV"
+                vehicle.Fuel = {
+                                fuel1:{"petrol1":"Shell","petrol2":"HP"},
+                                fuel2:{"diesel1":"essar","diesel2":"indian"}
+                                }
+        console.log(vehicle)
+        console.log(vehicle.Fuel.fuel1)
+
+        let dept = {}
+                dept.name1="MCA"
+                dept.year="first"
+                dept.section="A"
+        console.log(dept)
+
+        let college = Object.create(dept)
+                college.name = "RVCE"
+                college.type = "private"
+                college.loc = "Kengeri"
+        console.log(college)
+        console.log(college.name1)
+</script>
+
+
+</body>
+</html>
